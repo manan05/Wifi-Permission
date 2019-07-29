@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         btnStatusBar = findViewById(R.id.btnStatusBar);
         tvStatus = findViewById(R.id.tvStatus);
 
+
+
         btnStatusBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isConnected = netInfo != null &&
                         netInfo.isConnected();
                 tvStatus.setText(isConnected? "CONNECTED":"DISCONNECTED");
+
             }
         });
+
+
     }
 }
